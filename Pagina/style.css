@@ -1,0 +1,293 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    padding: 70px 0px 0;
+    background: linear-gradient(rgba(5, 7, 12, 0.50),rgba(5, 7, 12, 0.50)),
+    url("descarga.jpg") center / cover no-repeat fixed;
+    box-sizing: border-box;
+}
+
+.header{
+    background: #236;
+    height: 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    box-shadow: 0 0 7px #0007;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.nav{
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 992px;
+    margin: 0 auto;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo{
+    font-size: 15px;
+    font-weight: bold;
+    padding: 0 5px;
+    line-height: 50px;
+    text-transform: uppercase;
+    display: flex;
+    text-wrap:;
+}
+
+.img{
+    height: 35px;
+    width: 35px;
+    background: #fff;
+    border-radius: 20px;
+    margin-top: 8px;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.img:hover{
+    transform: scale(1.2);
+}
+
+.nav-menu{
+    display: flex;
+    margin-right: 0px;
+    list-style: none;
+}
+
+.nav-menu-item{
+    font-size: 10px;
+    margin: 0px;
+    line-height: 50px;
+    text-transform: uppercase !important;
+    width: max-content;
+    transition: all 0.5s ease;
+}
+
+.nav-menu-item:hover{
+    transform: scale(1.1);
+}
+
+.nav-menu-link{
+    margin: 0;
+    padding: 20px 20px;
+}
+
+.nav-menu-link:hover{
+    background: #fff;
+    color: #011;
+    transition: all 0.3s;
+}
+
+.nav-toggle{
+    color:#fff;
+    background: none;
+    border: none;
+    font-size: 20px;
+    padding: 0 20px;
+    line-height: 20px;
+    cursor: pointer;
+
+    display: none;
+}
+
+@media (max-width: 868px) {
+    body{
+    padding-top: 40px;
+}
+
+.header{
+    height: 30px;
+}
+
+.logo{
+    font-size: 10px;
+    padding: 0 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+
+.img{
+    height: 20px;
+    width: 20px;
+    border-radius: 20px;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.nav-menu{
+    flex-direction: column;
+    align-items: center;
+    margin: 0px;
+    background: #236;
+    position: fixed;
+    right: 0;
+    top: 30px;
+    width: 50%;
+    padding: 10px 0;
+
+    height: calc(100% - 30px);
+    overflow-y: auto;
+
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-menu-item{
+    line-height: 30px;
+    padding: 10px;
+}
+
+.nav-menu-link:hover{
+    background: #fff;
+    color: #011;
+    transition: 0.3s;
+    border-radius: 10px;
+}
+
+.nav-toggle{
+    display: block;
+}
+
+.nav-menu_visible{
+    transform: translateX(0)
+}
+}
+
+/*contenido*/
+
+.contenido{
+    width: 80%;
+    background: #ededed;
+    margin: auto;
+    border-radius: 4px;
+    padding: 10px 40px;
+    text-align: justify;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.contenido h2{
+    margin-top: 10px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+p{
+    line-height: 1.3;
+}
+
+.comunicados{
+    position: relative;
+    margin: 20px;
+    padding: 10px 40px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.enlaces img{
+    width: 100%;
+    height: 100%;
+    transition: all 0.5s ease;
+    object-fit: cover;
+    display: block;
+}
+
+.zoom{
+    display: block;
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+}
+
+.sinopsis{
+    max-width: 250px;
+}
+
+.enlaces{
+    transition: all 0.4s ease;
+    box-sizing:border-box;
+}
+
+.enlaces.zoom{
+    position: relative;
+    line-height: 0;
+}
+
+.enlaces.zoom::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(5, 7, 12, 0.50);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    
+}
+
+.enlaces.zoom:hover:after{
+    opacity: 1;
+}
+
+.comunicados h3{
+    margin: 5px 0;
+}
+
+.tittle a{
+    color: #011;
+    transition: all 0.5s ease;
+}
+
+.tittle a:hover{
+    color: #67c;
+    text-decoration:underline;
+    font-size: 20px;
+}
+
+.enlaces img:hover{
+    transform: scale(1.1);
+}
+
+.gallery{
+    width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.texto-flex{
+    flex: 1;
+    margin-right: 10px;
+}
+
+.img-flex{
+    flex-shrink: 0;
+}
+
+.img-flex img{
+    width: 350px;
+    height: 500px;
+}
+
+footer{
+    width: 100%;
+    height: auto;
+    background-color: #236;
+}
